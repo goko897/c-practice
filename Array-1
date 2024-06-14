@@ -1,3 +1,122 @@
+#include <stdio.h>
+#include <stdbool.h>
+
+bool sameFirstLast(int *nums[]){
+    int len = sizeof(nums)/sizeof(nums[0]);
+    if(nums[0]==nums[len-1]) return true;
+    return false;
+}
+int main(){
+    int arr[]={2,5,6,7,1,9,2};
+    if (sameFirstLast(arr)==true) printf("same first last!");
+    else printf("not same first last!");
+}
+
+#include <stdio.h>
+#include <stdbool.h>
+
+//Return an int array length 3 containing the first 3 digits of pi, {3, 1, 4}.
+int arr[];
+void makepie(){
+    arr[0]=3;
+    arr[1]=1;
+    arr[2]=4;
+}
+int *main(){
+    makepie();
+    for(int i=0;i<3;i++){
+        printf("%d ",arr[i]);
+    }
+    return 0;
+}
+
+#include <stdio.h>
+#include <stdbool.h>
+
+//Return an int array length 3 containing the first 3 digits of pi, {3, 1, 4}.
+
+bool commonEnd(int a[],int len, int b[],int len1){
+    if(len==0||len1==0) return false;
+    if(a[len-1]==b[len1-1]) return true;
+    return false;
+}
+int main(){
+    int arr[5]={3,3,5,1,2};
+    int arr1[6]={};
+    
+    int len=sizeof(arr)/sizeof(arr[0]);
+    int len1=sizeof(arr1)/sizeof(arr1[0]);    
+    if(commonEnd(arr,len,arr1,len1)==true) printf("common ends!");
+    else printf("not common ends!");
+} 
+
+#include<stdio.h>
+
+int main(){
+    int arr[5]={3,3,5,1,2};
+    int len=sizeof(arr)/sizeof(arr[0]);
+    for(int i=len-1;i>=len/2;i--){
+        int t=arr[i];
+        arr[i]=arr[len-1-i];
+        arr[len-1-i]=t;
+    }
+    for(int i=0;i<len;i++){
+        printf("%d ",arr[i]);
+    }
+    return 0;
+}
+
+#include<stdio.h>
+void middleway(int a[], int b[],int ans[]){
+    ans[0]=a[1];
+    ans[1]=b[1];
+}
+int main(){
+    int arr[5]={3,3,5};
+    int arr1[6]={3,8,9};
+    int ans[2];
+    middleway(arr,arr1,ans);
+    for(int i=0;i<2;i++){
+        printf("%d ",ans[i]);
+    }
+
+} 
+
+#include<stdio.h>
+int sum(int a[]){
+    int sum=0;
+    for(int i=0;i<=2;i++){
+        sum+=a[i];
+    }
+    return sum;
+}
+int main(){
+    int arr[5]={3,3,5};
+    printf("%d ",sum(arr));
+    return 0;
+
+} 
+#include<stdio.h>
+void rotateLeft(int a[]){
+    int t=a[0];
+    for(int i=0;i<2;i++){
+        a[i]=a[(i+1)];
+    }
+    a[2]=t;
+}
+int main(){
+    int arr[3]={2,3,5};
+    rotateLeft(arr);
+    for(int i=0;i<=2;i++){
+        printf("%d ",arr[i]);
+    }
+
+    return 0;
+
+} 
+
+
+
 9) Given an array of ints, return the sum of the first 2 elements in the array. If the array length is less than 2, just sum up the elements that exist, returning 0 if the array is length 0.
 #include <stdio.h>
 int sum2(int arr[]){
